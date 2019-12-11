@@ -74,4 +74,9 @@ describe('resolveExportedComponent', () => {
 		)
 		expect(resolveExportedComponent(ast).size).toBe(1)
 	})
+
+	it('should return exported components with vuetify format', () => {
+		const ast = babylon().parse('export default baseMixins.extend().extend({})')
+		expect(resolveExportedComponent(ast).size).toBe(1)
+	})
 })
